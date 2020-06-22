@@ -1,0 +1,14 @@
+.Profile-form {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.Submit-profile {
+    margin-top: 5px;
+    align-self: flex-end;
+}
