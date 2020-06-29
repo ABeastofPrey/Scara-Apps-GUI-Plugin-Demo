@@ -1,31 +1,25 @@
 import React from 'react';
 import './App.css';
 import Profile from './profile/Profile';
+import { Hello } from './hello/Hello';
 import ReactWebComponent from 'react-web-component';
 
-function HelloWorld() {
-  return (
-    <div>
-      Hello World!!!
-    </div>
-  )
-}
- 
-class Hello extends React.Component {
+
+class UserProfile extends React.Component {
   render() {
-    return <HelloWorld />
+    return <Profile />
   }
 }
 
-ReactWebComponent.create(<Hello />, 'user-profile');
-// ReactWebComponent.create(<HelloWorld />, 'user-profile');
+ReactWebComponent.create(<UserProfile />, 'user-profile');
+ReactWebComponent.create(<Hello />, 'hello-react');
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Profile />
         <user-profile></user-profile>
+        <hello-react></hello-react>
       </header>
     </div>
   );
