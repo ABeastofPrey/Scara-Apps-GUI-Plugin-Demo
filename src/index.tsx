@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
 import * as serviceWorker from './serviceWorker';
+
+// import MainPlugin from './plugins/main';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <MainPlugin /> */}
+    <hr />
+    <hello-main-plugin></hello-main-plugin>
   </React.StrictMode>,
   document.getElementById('root')
 );
