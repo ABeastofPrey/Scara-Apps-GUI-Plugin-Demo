@@ -1,4 +1,4 @@
-import './main.css';
+import './plugin.css';
 import React from 'react';
 import ReactWebComponent from 'react-web-component';
 

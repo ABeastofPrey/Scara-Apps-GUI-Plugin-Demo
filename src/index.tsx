@@ -3,12 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
-// import MainPlugin from './plugins/main';
-
 ReactDOM.render(
   <React.StrictMode>
-    {/* <MainPlugin /> */}
-    <hr />
+    <h1>Plugin test</h1>
     <hello-main-plugin></hello-main-plugin>
   </React.StrictMode>,
   document.getElementById('root')
