@@ -1,0 +1,15 @@
+{
+    "name": "first-plugin",
+    "type": "",
+    "version": "1.0.1",
+    "libs": ["HELLO_PLUGIN.LIB"],
+    "dependencies": ["other-plugin"],
+    "web-components": [
+        {
+            "name": "hello-plugin",
+            "host": ["project-side-menu-entry"],
+            "props": [],
+            "methods": []
+        }
+    ]
+}
