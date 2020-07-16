@@ -1,7 +1,6 @@
 declare namespace JSX {
     interface IntrinsicElements {
-        'user-profile': any;
-        'hello-react': any;
-        'hello-main-plugin': any;
+        'common-button': any;
+        'hello-plugin': any;
     }
 }

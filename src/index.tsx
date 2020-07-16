@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import * as serviceWorker from './serviceWorker';
 
-if (process.env.NODE_ENV == "development") {
+if (process.env.NODE_ENV === "development") {
 	ReactDOM.render(
 		<React.StrictMode>
 			<h1>Plugin test</h1>
-			<hello-main-plugin></hello-main-plugin>
+			<hello-plugin></hello-plugin>
 		</React.StrictMode>,
 		document.getElementById('root')
 	);
@@ -18,5 +18,5 @@ if (process.env.NODE_ENV == "development") {
 	serviceWorker.unregister();
 } else {
 	console.log('Plugins: ');
-	console.log('hello-main-plugin');
+	console.log('hello-plugin');
 }
