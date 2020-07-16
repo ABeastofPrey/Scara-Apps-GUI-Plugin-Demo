@@ -24,6 +24,7 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const postcssNormalize = require('postcss-normalize');
 
@@ -262,10 +263,17 @@ module.exports = function (webpackEnv) {
 			// Automatically split vendor and commons
 			// https://twitter.com/wSokra/status/969633336732905474
 			// https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366
-			// splitChunks: {
-			// 	chunks: 'all',
-			// 	name: false,
-			// },
+			splitChunks: {
+				chunks: 'async',
+				name: true,
+				cacheGroups: {
+					// 创建一个 commons 块，用于包含所有入口模块共用的代码
+					vendor: {
+						test:/[\\/]node_modules[\\/]/,
+						name:`vendors`,
+					}
+				}
+			},
 			// // Keep the runtime chunk separated to enable long term caching
 			// // https://twitter.com/wSokra/status/969679223278505985
 			// // https://github.com/facebook/create-react-app/issues/5358
@@ -652,6 +660,7 @@ module.exports = function (webpackEnv) {
 				// The formatter is invoked directly in WebpackDevServerUtils during development
 				formatter: isEnvProduction ? typescriptFormatter : undefined,
 			}),
+			isEnvProduction && new BundleAnalyzerPlugin()
 		].filter(Boolean),
 		// Some libraries import Node modules but don't use them in the browser.
 		// Tell webpack to provide empty mocks for them so importing them works.
