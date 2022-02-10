@@ -95,7 +95,7 @@
   },
   "devDependencies": {
     "live-server": "^1.2.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react-web-component-style-loader": "^0.1.4-alpha",
     "webpack-bundle-analyzer": "^3.8.0"
   },
